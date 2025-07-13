@@ -3,7 +3,7 @@ import { createProxyMiddleware } from "http-proxy-middleware";
 
 const app = express();
 
-const API_BASE_URL = "https://api.example.com";
+const API_BASE_URL = "https://www.azki.com/api/";
 
 app.use(
   "/api",

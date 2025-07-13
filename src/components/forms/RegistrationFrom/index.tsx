@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import {
   registrationSchema,
   type RegistrationFormData,
-} from "../../../utils/validations/authSchema";
+} from "../../../libs/validations/authSchema";
 import { useAppStore } from "../../../store/userStore";
 import FormInput from "../../core/FormInput";
 
