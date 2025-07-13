@@ -16,7 +16,9 @@ export const registrationSchema = z.object({
   mobile: z
     .string()
     .min(1, { message: "شماره موبایل اجباری است" })
-    .regex(/^09\d{9}$/, { message: "فرمت شماره موبایل صحیح نیست" }),
+    .regex(/^09\d{9}$/g, {
+      message: "فرمت شماره موبایل صحیح نیست",
+    }),
   password: z
     .string()
     .min(4, { message: "رمز عبور باید حداقل ۴ کاراکتر باشد" })
