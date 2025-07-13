@@ -15,7 +15,7 @@ export const RegistrationPage = () => {
   }, [isUserLogin]);
 
   return (
-    <div className="lg:px-8">
+    <div className="page-content">
       <RegistrationForm />
     </div>
   );

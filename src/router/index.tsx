@@ -3,6 +3,8 @@ import { Layout } from "../components/Layout";
 import { RegistrationPage } from "../components/pages/RegistrationPage";
 import { SelectInsurancePage } from "../components/pages/SelectInsurancePage";
 import { InitProvider } from "../providers/InitProvider";
+import { VehicleInfoPage } from "../components/pages/VehicleInfoPage";
+import { SelectCompanyPage } from "../components/pages/SelectCompanyPage";
 
 export const router = createBrowserRouter([
   {
@@ -21,11 +23,14 @@ export const router = createBrowserRouter([
         path: "select-insurance",
         element: <SelectInsurancePage />,
       },
-      // ... other pages will go here as children
-      // {
-      //   path: "vehicle-info",
-      //   element: <VehicleInfoPage />,
-      // },
+      {
+        path: "vehicle-info",
+        element: <VehicleInfoPage />,
+      },
+      {
+        path: "select-company",
+        element: <SelectCompanyPage />,
+      },
     ],
   },
 ]);

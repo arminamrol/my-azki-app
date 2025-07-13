@@ -1,1 +1,9 @@
 @import "tailwindcss";
+
+.page-content {
+  @apply flex flex-col space-y-3 lg:space-y-4 items-center lg:items-start w-full lg:w-1/2;
+}
+
+.page-title {
+  @apply text-2xl lg:text-3xl;
+}

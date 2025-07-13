@@ -12,4 +12,12 @@ export default defineConfig({
       "~": path.resolve(__dirname, "./public"),
     },
   },
+  server: {
+    proxy: {
+      "/api": {
+        target: "https://www.azki.com",
+        changeOrigin: true,
+      },
+    },
+  },
 });

@@ -27,11 +27,11 @@ export function RegistrationForm() {
   };
 
   return (
-    <div className="flex flex-col space-y-3 w-full lg:space-y-4 items-center lg:items-start">
-      <h2 className="text-2xl lg:text-3xl">ثبت نام</h2>
+    <>
+      <h2 className="page-title">ثبت نام</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col space-y-3 w-full lg:w-1/2"
+        className="flex flex-col space-y-3 w-full"
       >
         <div className="lg:flex-row flex-col space-y-3 space-x-3">
           <FormInput
@@ -65,7 +65,7 @@ export function RegistrationForm() {
           ثبت نام
         </button>
       </form>
-    </div>
+    </>
   );
 }
 
