@@ -17,3 +17,8 @@ export interface InsuranceCompany {
   satisfaction: number;
   wealthLevel: number;
 }
+
+export interface Discount {
+  id: number;
+  title: string;
+}

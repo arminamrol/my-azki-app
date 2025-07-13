@@ -45,7 +45,7 @@ export function SelectCompanyPage() {
 
   const onSubmit = (data: CompanyFormData) => {
     console.log("Selected Previous Insurer:", data);
-    // navigate('/next-page'); // TODO: Navigate to the final page
+    navigate("/discount");
   };
 
   if (isLoading) return <div>در حال بارگذاری شرکت‌های بیمه...</div>;
@@ -71,6 +71,7 @@ export function SelectCompanyPage() {
             required: true,
           })}
           error={errors.previousInsurer}
+          isSelected={isValid}
         />
 
         <div className="flex items-center justify-between w-full">

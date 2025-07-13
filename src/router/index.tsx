@@ -5,6 +5,7 @@ import { SelectInsurancePage } from "../components/pages/SelectInsurancePage";
 import { InitProvider } from "../providers/InitProvider";
 import { VehicleInfoPage } from "../components/pages/VehicleInfoPage";
 import { SelectCompanyPage } from "../components/pages/SelectCompanyPage";
+import { DiscountsPage } from "../components/pages/DiscountPage.tsx";
 
 export const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ export const router = createBrowserRouter([
       {
         path: "select-company",
         element: <SelectCompanyPage />,
+      },
+      {
+        path: "discount",
+        element: <DiscountsPage />,
       },
     ],
   },
