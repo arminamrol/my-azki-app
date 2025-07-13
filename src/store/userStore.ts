@@ -1,5 +1,5 @@
 import { create } from "zustand";
-import { persist } from "zustand/middleware"; // 1. Import the persist middleware
+import { persist } from "zustand/middleware";
 import { storageKeys } from "../constants/storageKeys";
 import type { SelectOption } from "../components/core/Select.tsx";
 
