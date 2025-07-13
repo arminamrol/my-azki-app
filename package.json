@@ -7,14 +7,18 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "proxy": "node proxy-server/server.js"
   },
   "dependencies": {
     "@hookform/resolvers": "^5.1.1",
     "@tailwindcss/vite": "^4.1.11",
+    "express": "^5.1.0",
+    "http-proxy-middleware": "^3.0.5",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-hook-form": "^7.60.0",
+    "react-router-dom": "^7.6.3",
     "tailwindcss": "^4.1.11",
     "zod": "^4.0.5",
     "zustand": "^5.0.6"
