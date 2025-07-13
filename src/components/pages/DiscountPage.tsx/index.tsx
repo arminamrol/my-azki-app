@@ -13,7 +13,12 @@ type DiscountsFormData = {
 
 export function DiscountsPage() {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const user = useAppStore((state) => state.user);
+  const setSelectedDiscounts = useAppStore(
+    (state) => state.setSelectedDiscounts
+  );
+  const { user, vehicleInfo, selectedCompany, selectedDiscounts } = useAppStore(
+    (state) => state
+  );
   const {
     register,
     handleSubmit,
@@ -35,7 +40,17 @@ export function DiscountsPage() {
   );
 
   const onSubmit = (data: DiscountsFormData) => {
-    console.log("Selected Discounts:", data);
+    const selectedThirdParty = discountOptions.find(
+      (opt) => opt.value === Number(data.thirdPartyDiscount)
+    );
+    const selectedDriverAccident = discountOptions.find(
+      (opt) => opt.value === Number(data.driverAccidentDiscount)
+    );
+
+    setSelectedDiscounts({
+      thirdPartyDiscount: selectedThirdParty || null,
+      driverAccidentDiscount: selectedDriverAccident || null,
+    });
     setIsModalOpen(true);
   };
 
@@ -85,12 +100,33 @@ export function DiscountsPage() {
         title="خلاصه اطلاعات"
       >
         {user ? (
-          <div>
+          <div className="space-y-2">
             <p>
               <strong>نام:</strong> {user.firstName}
             </p>
             <p>
               <strong>نام خانوادگی:</strong> {user.lastName}
+            </p>
+            <hr />
+            <p>
+              <strong>نوع خودرو:</strong> {vehicleInfo?.vehicleType?.label}
+            </p>
+            <p>
+              <strong>کاربری خودرو:</strong> {vehicleInfo?.vehicleUsage?.label}
+            </p>
+            <hr />
+            <p>
+              <strong>بیمه‌گر قبلی:</strong>{" "}
+              {selectedCompany?.previousInsurer?.label}
+            </p>
+            <hr />
+            <p>
+              <strong>تخفیف ثالث:</strong>
+              {selectedDiscounts?.thirdPartyDiscount?.label}
+            </p>
+            <p>
+              <strong>تخفیف حوادث:</strong>
+              {selectedDiscounts?.driverAccidentDiscount?.label}
             </p>
           </div>
         ) : (

@@ -6,6 +6,7 @@ import { getVehicleTypes } from "../../../services/api/vehicleService";
 import Select from "../../core/Select";
 import arrow from "~/icons/arrow.svg";
 import { classnames } from "../../../utils/classNames";
+import { useAppStore } from "../../../store/userStore";
 
 type VehicleInfoFormData = {
   vehicleType: string;
@@ -14,6 +15,7 @@ type VehicleInfoFormData = {
 
 export function VehicleInfoPage() {
   const navigate = useNavigate();
+  const setVehicleInfo = useAppStore((state) => state.setVehicleInfo);
   const {
     register,
     handleSubmit,
@@ -53,7 +55,18 @@ export function VehicleInfoPage() {
   }, [vehicleTypes, selectedTypeId]);
 
   const onSubmit = (data: VehicleInfoFormData) => {
-    console.log("Vehicle Info:", data);
+    const selectedType = typeOptions.find(
+      (opt) => opt.value === Number(data.vehicleType)
+    );
+    const selectedUsage = usageOptions.find(
+      (opt) => opt.value === Number(data.vehicleUsage)
+    );
+
+    setVehicleInfo({
+      vehicleType: selectedType || null,
+      vehicleUsage: selectedUsage || null,
+    });
+
     navigate("/select-company");
   };
 

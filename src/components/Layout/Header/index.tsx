@@ -21,7 +21,7 @@ export function Header() {
           src={logo}
         />
 
-        <h1 className="hidden lg:block text-lg">
+        <h1 className="hidden lg:block text-lg font-bold">
           سامانه مقایسه و خرید آنلاین بیمه
         </h1>
         <div className="flex items-center space-x-2">

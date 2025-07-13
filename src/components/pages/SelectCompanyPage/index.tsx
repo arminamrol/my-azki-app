@@ -6,6 +6,7 @@ import { getInsuranceCompanies } from "../../../services/api/companyService";
 import { classnames } from "../../../utils/classNames";
 import Select from "../../core/Select";
 import arrow from "~/icons/arrow.svg";
+import { useAppStore } from "../../../store/userStore";
 
 type CompanyFormData = {
   previousInsurer: string;
@@ -13,6 +14,7 @@ type CompanyFormData = {
 
 export function SelectCompanyPage() {
   const navigate = useNavigate();
+  const setSelectedCompany = useAppStore((state) => state.setSelectedCompany);
 
   const {
     register,
@@ -44,7 +46,12 @@ export function SelectCompanyPage() {
   const selectedInsurer = watch("previousInsurer");
 
   const onSubmit = (data: CompanyFormData) => {
-    console.log("Selected Previous Insurer:", data);
+    const selectedInsurer = companyOptions.find(
+      (opt) => opt.value === Number(data.previousInsurer)
+    );
+    setSelectedCompany({
+      previousInsurer: selectedInsurer || null,
+    });
     navigate("/discount");
   };
 

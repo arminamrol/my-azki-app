@@ -31,9 +31,9 @@ export function RegistrationForm() {
       <h2 className="page-title">ثبت نام</h2>
       <form
         onSubmit={handleSubmit(onSubmit)}
-        className="flex flex-col space-y-3 w-full"
+        className="flex flex-col lg:gap-6 gap-3 w-full"
       >
-        <div className="lg:flex-row flex-col space-y-3 space-x-3">
+        <div className="flex lg:flex-row flex-col lg:gap-6 gap-3">
           <FormInput
             label="نام"
             {...register("firstName")}
@@ -60,7 +60,7 @@ export function RegistrationForm() {
 
         <button
           type="submit"
-          className="rounded-4xl px-8 py-2 flex items-center justify-center cursor-pointer bg-green-700 hover:bg-green-800 text-white w-max self-center lg:self-end"
+          className="rounded-4xl px-8 py-2 flex items-center justify-center cursor-pointer bg-green-700 hover:bg-green-800 text-white w-max self-center lg:self-end mt-6 lg:mt-0"
         >
           ثبت نام
         </button>

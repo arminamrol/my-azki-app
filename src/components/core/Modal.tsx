@@ -14,7 +14,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
 
   return (
     <div
-      className="fixed inset-0 bg-black/60 bg-opacity-40 flex items-center justify-center z-50"
+      className="fixed p-4 inset-0 bg-black/60 bg-opacity-40 flex items-center justify-center z-50"
       onClick={onClose}
     >
       <div
@@ -25,7 +25,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, onClose, title, children }) => {
           <h3 className="text-lg font-bold">{title}</h3>
           <button
             onClick={onClose}
-            className="text-gray-500 hover:text-gray-800 text-2xl"
+            className="text-gray-500 hover:text-gray-800 text-2xl cursor-pointer"
             aria-label="Close modal"
           >
             &times;
